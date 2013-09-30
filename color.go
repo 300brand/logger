@@ -20,5 +20,6 @@ func NewColorWriter(color string) ColorWriter {
 }
 
 func (w ColorWriter) Write(p []byte) (n int, err error) {
+	defer w.Writer.Reset()
 	return w.Writer.Color(w.Color).Write(p)
 }
