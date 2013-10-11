@@ -7,9 +7,9 @@ import (
 const DefaultFlags = log.LstdFlags | log.Lshortfile | log.Lmicroseconds
 
 var (
-	Trace = log.New(NewColorWriter("!b"), "  TRACE ", DefaultFlags)
-	Debug = log.New(NewColorWriter("c"), "  DEBUG ", DefaultFlags)
-	Info  = log.New(NewColorWriter("g"), "   INFO ", DefaultFlags)
-	Warn  = log.New(NewColorWriter("y"), "   WARN ", DefaultFlags)
-	Error = log.New(NewColorWriter("r"), "  ERROR ", DefaultFlags)
+	Trace = log.New(NewColorStdout("!b"), "  TRACE ", DefaultFlags)
+	Debug = log.New(NewColorStdout("c"), "  DEBUG ", DefaultFlags)
+	Info  = log.New(NewColorStdout("g"), "   INFO ", DefaultFlags)
+	Warn  = log.New(NewColorStdout("y"), "   WARN ", DefaultFlags)
+	Error = log.New(NewColorStdout("r"), "  ERROR ", DefaultFlags)
 )

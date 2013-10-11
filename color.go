@@ -12,7 +12,14 @@ type ColorWriter struct {
 
 var _ io.Writer = ColorWriter{}
 
-func NewColorWriter(color string) ColorWriter {
+func NewColorStderr(color string) ColorWriter {
+	return ColorWriter{
+		Color:  color,
+		Writer: terminal.Stderr,
+	}
+}
+
+func NewColorStdout(color string) ColorWriter {
 	return ColorWriter{
 		Color:  color,
 		Writer: terminal.Stdout,
