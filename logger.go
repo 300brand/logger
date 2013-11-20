@@ -13,3 +13,9 @@ var (
 	Warn  = log.New(NewColorStdout("y"), "   WARN ", DefaultFlags)
 	Error = log.New(NewColorStdout("r"), "  ERROR ", DefaultFlags)
 )
+
+func SetFlags(flag int) {
+	for _, l := range []*log.Logger{Trace, Debug, Info, Warn, Error} {
+		l.SetFlags(flag)
+	}
+}
